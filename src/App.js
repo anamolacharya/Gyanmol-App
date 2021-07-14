@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ArticlesListPage from "./pages/ArticlesListPage";
+import ArticlePage from "./pages/ArticlePage";
+import NavBar from "./NavBar";
+import ProjectPage from "./pages/ProjectPage";
+import ProjectListPage from "./pages/ProjectListPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import TestPrepPage from "./pages/TestPrepPage";
+
+import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <div id="page-body">
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/testprep" component={TestPrepPage} exact />
+            <Route path="/about" component={AboutPage} exact />
+            <Route path="/projects" component={ProjectPage} exact />
+            <Route
+              path="/projects/netflix-clone"
+              component={ProjectListPage}
+              exact
+            />
+            <Route path="/articles" component={ArticlesListPage} exact />
+            <Route path="/articles/:name" component={ArticlePage} exact />
+            <Route component={NotFoundPage} exact />
+          </Switch>
+        </div>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
