@@ -7,7 +7,7 @@ const HomePage = () => (
 
     <p>
       Hello Everyone, Welcome to my Website! I am gradually updating this site
-      in coming days. I find myself learning new skills and programming
+      upcoming days. I find myself learning new skills and programming
       languages, problem-solving, responsive design principles, website
       optimization, software engineering, and Model View Controller (MVC)
       methods of organizing code. I have experience using Java, Javascript,
