@@ -4,6 +4,7 @@ const AboutPage = () => (
   <>
     <h1>About Page</h1>
 
+    {/* Image */}
     <p>
       I am Anamol Acharya, an aspiring Full Stack Developer looking for
       full-time opportunities. I recently graduated from Texas Tech University
@@ -38,6 +39,8 @@ const AboutPage = () => (
       competitive in Ping-Pong and have some great recipes for Potluck party! In
       the end, I would like to thank you very much for your time.
     </p>
+
+    {/* Contact-LinkedIn, Github */}
   </>
 );
 
