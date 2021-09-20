@@ -1,17 +1,30 @@
 import React from "react";
 import Dropdown from "../components/Dropdown";
+import sat from "../images/SAT.jpg";
+import awsccp from "../images/AWS-CCP.png";
+import az900 from "../images/AZ-900.jpg";
+import nclex from "../images/NCLEX.png";
+import Topic from "../components/Topic";
+import "../css/Topics.css";
 
 const TestPrepPage = () => (
   <>
     <h1>Welcome to Test Preparation page!</h1>
     <Dropdown />
+    <div className="topic_banner">
+      <Topic topicName="AWS CCP" image={awsccp} />
+      <Topic topicName="AZ 900" image={az900} />
+      <Topic topicName="SATs" image={sat} />
+      <Topic topicName="NCLEX" image={nclex} />
+    </div>
+
     <div>
       {/* 1,2,3,4,5,6,14,16,18,20 */}
       <h4>AWS Practice Set 1</h4>
       <br />
       <li>
         Which AWS service provides a simple way to set up a new multi-account
-        AWS environment and govern it at scale?{" "}
+        AWS environment and govern it at scale?
       </li>
       <ul>A. AWS Trusted Advisor</ul>
       <ul>B. AWS Security Hub</ul>
