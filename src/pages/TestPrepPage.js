@@ -1,8 +1,10 @@
 import React from "react";
+import Dropdown from "../components/Dropdown";
 
 const TestPrepPage = () => (
   <>
     <h1>Welcome to Test Preparation page!</h1>
+    <Dropdown />
     <div>
       {/* 1,2,3,4,5,6,14,16,18,20 */}
       <h4>AWS Practice Set 1</h4>
