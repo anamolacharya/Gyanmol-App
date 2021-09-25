@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Experience from "../components/Experience";
 
 // class RedirectPage extends React.Component {
 //     componentDidMount(){
@@ -8,7 +9,9 @@ import { Link } from "react-router-dom";
 //   }
 const ProjectListPage = () => (
   <>
-    <h1>Experiences</h1>
+    <h1>Experience</h1>
+    <Experience title="Algorizin" link="github.com" description="Hello" />
+
     <ul>
       <b>Nudge</b>
       <li>
