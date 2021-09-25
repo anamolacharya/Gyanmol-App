@@ -5,7 +5,9 @@ function Experience(props) {
     <div className="experience">
       <h4 className="experience_title">{props.title}</h4>
       <h5 className="experience_link">{props.link}</h5>
-      <p className="experience_descrption">{props.description}</p>
+      <li className="li1">{props.li1}</li>
+      <li className="li2">{props.li2}</li>
+      <li className="li3">{props.li3}</li>
     </div>
   );
 }

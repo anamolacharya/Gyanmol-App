@@ -10,7 +10,13 @@ import Experience from "../components/Experience";
 const ProjectListPage = () => (
   <>
     <h1>Experience</h1>
-    <Experience title="Algorizin" link="github.com" description="Hello" />
+    <Experience
+      title="Algorizin"
+      link="github.com/algorizin"
+      li1="Hello"
+      li2="Hi"
+      li3="li3"
+    />
 
     <ul>
       <b>Nudge</b>
