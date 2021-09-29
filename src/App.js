@@ -10,6 +10,7 @@ import ProjectPage from "./pages/ProjectPage";
 import ProjectListPage from "./pages/ProjectListPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import TestPrepPage from "./pages/TestPrepPage";
+import awsccp from "./pages/testPrep/awsccp";
 
 import "./App.css";
 import Footer from "./components/Footer";
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route path="/" component={HomePage} exact />
             <Route path="/testprep" component={TestPrepPage} exact />
+            <Route path="/testprep/awsccp" component={awsccp} exact />
             <Route path="/about" component={AboutPage} exact />
             <Route path="/projects" component={ProjectPage} exact />
             <Route
