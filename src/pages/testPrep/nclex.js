@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { awsTestSet } from "../../QuestionSource/awsSource";
+import { nclexSet } from "../../QuestionSource/nclexSource";
 import "./testSet.css";
 import Timer from "../../components/Timer";
 
-export default function Awsccp() {
+export default function Nclex() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
@@ -14,7 +14,7 @@ export default function Awsccp() {
       //alert("the answer is correct!");
     }
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < awsTestSet.questions.length) {
+    if (nextQuestion < nclexSet.questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       // alert("You finished all the question from quiz!");
@@ -31,7 +31,7 @@ export default function Awsccp() {
         <div className="score-section">
           <br />{" "}
           <b>
-            You scored {score} out of {awsTestSet.questions.length}
+            You scored {score} out of {nclexSet.questions.length}
           </b>
         </div>
       ) : (
@@ -39,23 +39,21 @@ export default function Awsccp() {
           <div className="question-section">
             <div className="question-count">
               <span>Question {currentQuestion + 1}</span>/
-              {awsTestSet.questions.length}
+              {nclexSet.questions.length}
             </div>
             <div className="question-text">
-              {awsTestSet.questions[currentQuestion].question}
+              {nclexSet.questions[currentQuestion].question}
             </div>
           </div>
           <div className="answer-section">
-            {awsTestSet.questions[currentQuestion].options.map(
-              (ansOp, index) => (
-                <button
-                  className="ansButton"
-                  onClick={() => handleAnswerButtonClick(ansOp.isCorrect)}
-                >
-                  {ansOp.value}
-                </button>
-              )
-            )}
+            {nclexSet.questions[currentQuestion].options.map((ansOp, index) => (
+              <button
+                className="ansButton"
+                onClick={() => handleAnswerButtonClick(ansOp.isCorrect)}
+              >
+                {ansOp.value}
+              </button>
+            ))}
           </div>
         </>
       )}

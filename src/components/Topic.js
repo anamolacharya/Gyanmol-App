@@ -5,7 +5,7 @@ export default function Topic(props) {
   const history = useHistory();
 
   function handleClick() {
-    history.push("/testprep/awsccp");
+    history.push(`/testprep/${props.name}`);
     console.log("Clicked!");
   }
 

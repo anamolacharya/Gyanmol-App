@@ -11,6 +11,9 @@ import ProjectListPage from "./pages/ProjectListPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import TestPrepPage from "./pages/TestPrepPage";
 import awsccp from "./pages/testPrep/awsccp";
+import az900 from "./pages/testPrep/az900";
+import sat from "./pages/testPrep/sat";
+import nclex from "./pages/testPrep/nclex";
 
 import "./App.css";
 import Footer from "./components/Footer";
@@ -25,6 +28,9 @@ function App() {
             <Route path="/" component={HomePage} exact />
             <Route path="/testprep" component={TestPrepPage} exact />
             <Route path="/testprep/awsccp" component={awsccp} exact />
+            <Route path="/testprep/az900" component={az900} exact />
+            <Route path="/testprep/sat" component={sat} exact />
+            <Route path="/testprep/nclex" component={nclex} exact />
             <Route path="/about" component={AboutPage} exact />
             <Route path="/projects" component={ProjectPage} exact />
             <Route

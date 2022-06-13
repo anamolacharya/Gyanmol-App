@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "../components/Dropdown";
+import Timer from "../components/Timer";
 import sat from "../images/SAT.jpg";
 import awsccp from "../images/AWS-CCP.png";
 import az900 from "../images/AZ-900.jpg";
@@ -12,26 +13,27 @@ function TestPrepPage() {
   const [enter, setEnter] = useState(false);
   const history = useHistory();
 
-  function onMouseEnter() {
-    setEnter(true);
-  }
-  function onMouseLeave() {
-    setEnter(false);
-  }
-  function handleClick() {
-    history.push("/awsccp");
-    console.log("Clicked!");
-  }
+  // function onMouseEnter() {
+  //   setEnter(true);
+  // }
+  // function onMouseLeave() {
+  //   setEnter(false);
+  // }
+  // function handleClick() {
+  //   history.push("/awsccp");
+  //   console.log("Clicked!");
+  // }
   return (
     <>
       <h1>Welcome to Test Preparation page!</h1>
       <Dropdown />
       <div className="topic_banner">
-        <Topic topicName="AWS CCP" image={awsccp} />
-        <Topic topicName="AZ 900" image={az900} />
-        <Topic topicName="SATs" image={sat} />
-        <Topic topicName="NCLEX" image={nclex} />
+        <Topic topicName="AWS CCP" image={awsccp} name="awsccp" />
+        <Topic topicName="AZ 900" image={az900} name="az900" />
+        <Topic topicName="SATs" image={sat} name="sat" />
+        <Topic topicName="NCLEX" image={nclex} name="nclex" />
       </div>
+      <Timer />
 
       <div>
         {/* 1,2,3,4,5,6,14,16,18,20 */}
