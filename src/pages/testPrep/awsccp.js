@@ -26,7 +26,7 @@ export default function Awsccp() {
   return (
     <>
       <br />
-      <Timer />
+
       {showScore ? (
         <div className="score-section">
           <br />{" "}
@@ -36,6 +36,7 @@ export default function Awsccp() {
         </div>
       ) : (
         <>
+          <Timer />
           <div className="question-section">
             <div className="question-count">
               <span>Question {currentQuestion + 1}</span>/
