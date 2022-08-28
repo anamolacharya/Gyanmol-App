@@ -17,6 +17,35 @@ import nclex from "./pages/testPrep/nclex";
 
 import "./App.css";
 import Footer from "./components/Footer";
+import { useQuery, gql } from "@apollo/client";
+
+const GET_QUESTIONS = gql`
+  query GetAllQuestions {
+    getAllQuestions {
+      number
+      title
+      options
+    }
+  }
+`;
+
+function DisplayQuestions() {
+  const { loading, error, data } = useQuery(GET_QUESTIONS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error! </p>;
+  console.log(data.getAllQuestions);
+  // return <p>Data parsed</p>;
+  return data.getAllQuestions.map((e, i) => (
+    <div key={i + 1}>
+      {" "}
+      <h3>
+        Question {i + 1}: {e.title}
+      </h3>
+      <p>Option: {e.options}</p>
+    </div>
+  ));
+}
 
 function App() {
   return (
@@ -42,6 +71,7 @@ function App() {
             <Route path="/articles/:name" component={ArticlePage} exact />
             <Route component={NotFoundPage} exact />
           </Switch>
+          <DisplayQuestions />
         </div>
 
         <Footer />
