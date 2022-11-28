@@ -2,11 +2,25 @@ import React, { useState } from "react";
 import { awsTestSet } from "../../QuestionSource/awsSource";
 import "./testSet.css";
 import Timer from "../../components/Timer";
+import { useHistory } from "react-router-dom";
 
 export default function Awsccp() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const history = useHistory();
+
+  function SetOne() {
+    function handleClick() {
+      history.push(`/testprep/set1`);
+      console.log("Clicked!");
+    }
+    return (
+      <>
+        <button onClick={handleClick}>Set 1</button>
+      </>
+    );
+  }
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect) {
@@ -37,6 +51,9 @@ export default function Awsccp() {
       ) : (
         <>
           <Timer />
+
+          <SetOne />
+
           <div className="question-section">
             <div className="question-count">
               <span>Question {currentQuestion + 1}</span>/

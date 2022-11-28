@@ -17,6 +17,8 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import DisplayQuestions from "../components/Questions/DisplayQuestion";
+import FormModal from "../components/Questions/FormModal";
 
 function TestPrepPage() {
   const [enter, setEnter] = useState(false);
@@ -47,7 +49,9 @@ function TestPrepPage() {
         <Topic topicName="SATs" image={sat} name="sat" />
         <Topic topicName="NCLEX" image={nclex} name="nclex" />
       </div>
-      <Timer />
+      {/* <Timer /> */}
+      <DisplayQuestions />
+      <FormModal />
     </>
   );
   /*

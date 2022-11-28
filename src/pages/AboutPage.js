@@ -1,11 +1,42 @@
 import React from "react";
+import Chart from "../components/Analytics/Chart";
+import { useQuery, gql } from "@apollo/client";
+import FormModal from "../components/Questions/FormModal";
+
+const GET_QUESTIONS = gql`
+  query GetAllQuestions {
+    getAllQuestions {
+      number
+      title
+      options
+    }
+  }
+`;
+
+function DisplayQuestions() {
+  const { loading, error, data } = useQuery(GET_QUESTIONS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error ayo! </p>;
+  console.log(data.getAllQuestions);
+  // return <p>Data parsed</p>;
+  return data.getAllQuestions.map((e, i) => (
+    <div key={i + 1}>
+      {" "}
+      <h3>
+        Question {i + 1}: {e.title}
+      </h3>
+      <p>Option: {e.options}</p>
+    </div>
+  ));
+}
 
 const AboutPage = () => (
   <>
-    <h1>About Page</h1>
+    <h1>Analytics Page</h1>
 
     {/* Image */}
-    <p>
+    {/* <p>
       I am Anamol Acharya, an aspiring Full Stack Developer looking for
       full-time opportunities. I recently graduated from Texas Tech University
       with a Bachelor of Science in Computer Science. Since childhood, I was
@@ -38,10 +69,21 @@ const AboutPage = () => (
       working related to my profession. Did I forget to mention that I am
       competitive in Ping-Pong and have some great recipes for Potluck party! In
       the end, I would like to thank you very much for your time.
-    </p>
+    </p> */}
 
-    {/* Contact-LinkedIn, Github */}
+    <Chart />
   </>
 );
 
 export default AboutPage;
+
+//Mutation format
+// {
+//   "question": {
+//     "number": "Five",
+//     "title": "Asmita ko kapal",
+//     "options": "1,2,3",
+//     "answer": "2",
+//     "explanation": "Two"
+//   }
+// }
